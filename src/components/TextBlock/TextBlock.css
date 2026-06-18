@@ -1,0 +1,15 @@
+.text-block {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.text-block__title {
+  font-size: 1.1rem;
+}
+
+.text-block__paragraph {
+  font-size: 0.94rem;
+  max-width: 62ch;
+}

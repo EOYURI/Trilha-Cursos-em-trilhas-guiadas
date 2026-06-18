@@ -1,0 +1,89 @@
+.trail-carousel {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.55);
+}
+
+.trail-carousel .carousel-item img {
+  height: clamp(280px, 52vw, 480px);
+  object-fit: cover;
+  filter: saturate(0.92) brightness(0.78);
+}
+
+.trail-carousel .carousel-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 32, 28, 0) 35%,
+    rgba(15, 24, 21, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+.trail-carousel__caption {
+  text-align: left;
+  left: clamp(1.25rem, 4vw, 3rem);
+  right: clamp(1.25rem, 4vw, 3rem);
+  bottom: clamp(1.25rem, 4vw, 2.5rem);
+  padding: 0;
+}
+
+.trail-carousel__caption h3 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--ink);
+  margin: 0.35rem 0 0.4rem;
+}
+
+.trail-carousel__caption p {
+  color: var(--ink-muted);
+  max-width: 38ch;
+  font-size: 0.95rem;
+}
+
+.trail-carousel .carousel-control-prev,
+.trail-carousel .carousel-control-next {
+  width: 8%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.trail-carousel:hover .carousel-control-prev,
+.trail-carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.trail-carousel .carousel-control-prev-icon,
+.trail-carousel .carousel-control-next-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  background-color: rgba(27, 46, 40, 0.55);
+  border: 1px solid rgba(244, 241, 232, 0.3);
+  border-radius: 50%;
+  background-size: 1.1rem;
+  padding: 0.6rem;
+}
+
+.trail-carousel .carousel-indicators {
+  bottom: -2px;
+  margin-bottom: 0.65rem;
+}
+
+.trail-carousel .carousel-indicators [data-bs-target] {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--ink);
+  opacity: 0.35;
+  border: none;
+  margin: 0 4px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.trail-carousel .carousel-indicators .active {
+  background-color: var(--accent);
+  opacity: 1;
+  transform: scale(1.2);
+}
